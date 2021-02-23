@@ -1,9 +1,16 @@
 import 'reflect-metadata';
-import express, { request } from 'express';
+import express from 'express';
 
 import './database';
+import router from './routes';
 
 const app = express();
+
+app.use(express.json());
+
+app.use(router);
+
+app.listen(3003, () => console.log("Server is run"));
 
 /* 
   METODOS DE REQUISIÇÃO
@@ -14,16 +21,5 @@ const app = express();
   PATCH > ALTERAÇÃO ESPECÍFICA
 */
 
-app.get("/", (request, response) => {
-  return response.json({ message: "Hello World - NLW04" });
-});
-
-// 1° PARÂMETRO > ROTA(REACURSO DA API)
+// 1° PARÂMETRO > ROTA(RECURSO DA API)
 // 2° PARÂMETRO > CALLBACK(REQUEST, RESPONSE)
-
-app.post("/", (request, response) => {
-  //Dados para salvar
-  return response.json({message: "Os dados foram salvos com sucesso!"});
-});
-
-app.listen(3003, () => console.log("Server is run"));
