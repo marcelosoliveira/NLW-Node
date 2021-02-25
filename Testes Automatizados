@@ -1,0 +1,22 @@
+Testes Automatizados
+
+Utilizado em aplicação BackEnd
+1° Tipo - Testes Unitários
+
+2° Tipo - Testes de Integração
+
+-> request -> routes -> controler -> repository
+<- repository <- controller <- response
+
+
+Utilizado em aplicação FrontEnd
+1° Tipo - Testes Unitários
+
+3° Tipo - Ponta a Ponta(E2E) 
+
+"scripts": {
+    "dev": "ts-node-dev --transpile-only --ignore-watch node_modules src/service.ts",
+    "typeorm": "ts-node-dev node_modules/typeorm/cli.js",
+    "test": "NODE_END=test jest",
+    "posttest": "rm ./database/database.test.sqlite" > deleta o banco de dados para refazer os testes.
+  },
