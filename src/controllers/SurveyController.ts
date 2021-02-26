@@ -6,7 +6,6 @@ import SurveysRepository from '../repositories/SurveysRepository';
 class SurveyController {
   async create(request: Request, response: Response) {
     const { title, description } = request.body;
-    console.log(title)
 
     const surveysRepository = getCustomRepository(SurveysRepository);
 
