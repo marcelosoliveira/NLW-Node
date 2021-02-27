@@ -49,3 +49,10 @@ describe("Surveys", () => {
 
 });
 
+/*Outro jeitto de fazer
+  afterAll(async () => {
+  const connection = await createConnection();
+  await connection.dropDatabase();
+  await connection.close();
+});
+ */
