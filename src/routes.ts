@@ -3,6 +3,7 @@ import { Router } from 'express';
 import SurveyController from './controllers/SurveyController';
 import SendMailController from './controllers/SendMailController';
 import UserController from './controllers/UserController';
+import AnswerController from './controllers/AnswerController';
 
 const router = Router();
 
@@ -12,6 +13,8 @@ const surveyController = new SurveyController();
 
 const sendMailController = new SendMailController();
 
+const answerController = new AnswerController();
+
 router.get("/users", userController.show);
 router.post("/users", userController.create);
 
@@ -20,6 +23,8 @@ router.post("/surveys", surveyController.create);
 
 router.get("/sendMail", sendMailController.show);
 router.post("/sendMail", sendMailController.execute);
+
+router.get("/answers/:value", answerController.execute);
 
 export default router;
 
